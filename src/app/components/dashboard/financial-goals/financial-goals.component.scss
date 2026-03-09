@@ -1,83 +1,96 @@
 @use '../../../styles/constants' as *;
 
-:host { display: block; }
+:host {
+  display: block;
+}
 
 .goals-card {
-  display:        flex;
+  display: flex;
   flex-direction: column;
-  gap:            $spacing-md;
+  gap: $spacing-md;
 }
 
 .goals-header {
-  display:         flex;
-  align-items:     center;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
 
   .goals-title {
-    font-size:   $font-size-md;
-    font-weight: $font-weight-semi;
-    color:       var(--text-primary);
+    font-size: $font-size-lg;
+    color: var(--text-primary);
+    font-weight: $font-weight-medium;
   }
 
   .arrow-btn {
-    width:           26px;
-    height:          26px;
-    border-radius:   50%;
-    border:          1px solid var(--border-color);
-    background:      var(--bg-input);
-    color:           var(--text-secondary);
-    cursor:          pointer;
-    display:         flex;
-    align-items:     center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: var(--bg-input);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    transition:      all $transition-fast;
-    i { font-size: 0.6rem; }
-    &:hover { background: $purple-primary; border-color: $purple-primary; color: #fff; }
+    transition: all $transition-fast;
+
+    i {
+      font-size: 0.6rem;
+    }
+
+    &:hover {
+      background: $purple-primary;
+      border-color: $purple-primary;
+      color: #fff;
+    }
   }
 }
 
 .goals-list {
-  display:        flex;
+  display: flex;
   flex-direction: column;
 }
 
 .goal-row {
-  display:       flex;
-  align-items:   center;
-  gap:           $spacing-md;
-  padding:       10px 0;
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: 10px 0;
   border-bottom: 1px solid var(--border-subtle);
-  &:last-child   { border-bottom: none; }
+
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 //  SVG Ring
 .ring-wrap {
-  position:   relative;
-  width:      40px;
-  height:     40px;
+  position: relative;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
 
   .ring-bg {
-    fill:         none;
-    stroke:       var(--bg-input);
+    fill: none;
+    stroke: var(--bg-input);
     stroke-width: 3;
   }
 
   .ring-fill {
-    fill:             none;
-    stroke-width:     3;
-    stroke-linecap:   round;
-    transition:       stroke-dasharray $transition-slow;
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    transition: stroke-dasharray $transition-slow;
     stroke-dashoffset: 0;
   }
 
   .ring-label {
-    position:  absolute;
-    inset:     0;
-    display:   flex;
-    align-items:     center;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    font-size:   7.5px;
+    font-size: 7.5px;
     font-weight: $font-weight-bold;
     line-height: 1;
   }
@@ -85,40 +98,48 @@
 
 // Goal info
 .goal-info {
-  flex:           1;
-  display:        flex;
+  flex: 1;
+  display: flex;
   flex-direction: column;
-  gap:            2px;
-  min-width:      0;
+  gap: 2px;
+  min-width: 0;
 
   .goal-name {
-    font-size:     $font-size-sm;
-    font-weight:   $font-weight-semi;
-    color:         var(--text-primary);
-    white-space:   nowrap;
-    overflow:      hidden;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semi;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
   }
 
   .goal-deadline {
     font-size: $font-size-xs;
-    color:     var(--text-muted);
+    color: var(--text-muted);
   }
 }
 
 // Amounts 
 .goal-amounts {
-  display:    flex;
-  gap:        $spacing-lg;
+  display: flex;
+  gap: $spacing-lg;
   flex-shrink: 0;
 
   .amt-col {
-    display:        flex;
+    display: flex;
     flex-direction: column;
-    align-items:    flex-end;
-    gap:            1px;
+    align-items: flex-end;
+    gap: 1px;
 
-    .amt-label { font-size: $font-size-xs; color: var(--text-muted);  }
-    .amt-val   { font-size: $font-size-sm; font-weight: $font-weight-bold; color: var(--text-primary); }
+    .amt-label {
+      font-size: $font-size-xs;
+      color: var(--text-muted);
+    }
+
+    .amt-val {
+      font-size: $font-size-sm;
+      font-weight: $font-weight-bold;
+      color: var(--text-primary);
+    }
   }
 }

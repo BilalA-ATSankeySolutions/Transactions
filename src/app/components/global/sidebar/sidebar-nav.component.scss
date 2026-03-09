@@ -4,12 +4,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 52px;
+  width: 60px;
   background: var(--bg-card);
   border-radius: $border-radius-xl;
   border: 1px solid var(--border-color);
   box-shadow: $shadow-dark-card;
   padding: $spacing-md 0;
+  margin-left: 20px;
   gap: $spacing-xs;
 
   .sidebar-items {

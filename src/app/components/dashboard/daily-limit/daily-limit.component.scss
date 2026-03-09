@@ -11,7 +11,7 @@
 }
 
 .limit-title {
-    font-size: $font-size-sm;
+    font-size: $font-size-md;
     font-weight: $font-weight-semi;
     color: var(--text-primary);
 }
@@ -36,7 +36,7 @@
 
     .limit-info {
         font-size: $font-size-xs;
-        color: var(--text-muted);
+        color: var(--text-primary);
     }
 
     .limit-pct {
