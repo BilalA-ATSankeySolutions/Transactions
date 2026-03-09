@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TooltipModule } from 'primeng/tooltip';
 import { Router } from '@angular/router';
+import { CommonService } from '../../../services/common.service';
+import { AuthService } from '../../../services/auth.service';
 
 interface SideItem { icon: string; label: string; route: string; }
 
@@ -20,7 +22,7 @@ export class SidebarNavComponent {
 
   @Output() navClick = new EventEmitter<void>();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private auth: AuthService, private common: CommonService) { }
 
   items: SideItem[] = [
     { icon: 'pi pi-th-large', label: 'Dashboard', route: '/dashboard' },
@@ -38,5 +40,13 @@ export class SidebarNavComponent {
 
   onNavClick(): void { this.navClick.emit(); }
 
-  logout(): void { this.router.navigate(['/login']); }
+  logout() {
+    this.common.confirm(
+      'Are you sure you want to logout?',
+      () => {
+        this.auth.logout(false);
+      },
+      'Logout'
+    );
+  }
 }
