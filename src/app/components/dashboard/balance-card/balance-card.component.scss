@@ -15,7 +15,7 @@
   font-weight: $font-weight-medium;
 }
 
-// ── Balance Row ───────────────────────────────────────────────
+// Balance Row
 .balance-row {
   display:     flex;
   align-items: center;
@@ -44,7 +44,7 @@
   }
 }
 
-// ── Action Buttons ────────────────────────────────────────────
+// Action Buttons
 .action-btns {
   display: flex;
   gap:     $spacing-sm;
@@ -76,7 +76,7 @@
   }
 }
 
-// ── Sub Balances ──────────────────────────────────────────────
+// Sub Balances
 .sub-balances {
   display:         flex;
   justify-content: space-between;
@@ -91,7 +91,7 @@
   }
 }
 
-// ── Credit Progress ───────────────────────────────────────────
+// Credit Progress
 .credit-section {
   margin-top: auto;
 

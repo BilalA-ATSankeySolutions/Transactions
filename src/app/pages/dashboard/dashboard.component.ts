@@ -5,8 +5,9 @@ import { TransactionChartComponent } from '../../components/dashboard/transactio
 import { FinancialGoalsComponent } from '../../components/dashboard/financial-goals/financial-goals.component';
 import { AllExpensesComponent } from '../../components/dashboard/all-expense/all-expenses.component';
 import { CreditCardComponent } from '../../components/dashboard/credit-card/credit-card.component';
-import { DailyLimitComponent } from '../../components/dashboard/daily-limit.component';
+import { DailyLimitComponent } from '../../components/dashboard/daily-limit/daily-limit.component';
 import { RecentTransactionsComponent } from '../../components/dashboard/recent-transactions/recent-transactions.component';
+import { labels } from '../../utils/json-data';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,4 +25,6 @@ import { RecentTransactionsComponent } from '../../components/dashboard/recent-t
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
-export class DashboardComponent {}
+export class DashboardComponent {
+  label: any = labels;
+}

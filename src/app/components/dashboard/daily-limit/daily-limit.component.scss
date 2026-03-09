@@ -1,0 +1,47 @@
+@use '../../../styles/constants' as *;
+
+:host {
+    display: block;
+}
+
+.limit-card {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+}
+
+.limit-title {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semi;
+    color: var(--text-primary);
+}
+
+.progress-track {
+    height: 6px;
+    background: var(--bg-input);
+    border-radius: 10px;
+    overflow: hidden;
+
+    .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, $purple-primary, $purple-light);
+        border-radius: 10px;
+        transition: width $transition-slow;
+    }
+}
+
+.limit-footer {
+    display: flex;
+    justify-content: space-between;
+
+    .limit-info {
+        font-size: $font-size-xs;
+        color: var(--text-muted);
+    }
+
+    .limit-pct {
+        font-size: $font-size-xs;
+        font-weight: $font-weight-semi;
+        color: var(--text-secondary);
+    }
+}

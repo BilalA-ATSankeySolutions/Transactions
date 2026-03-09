@@ -1,8 +1,8 @@
 <div class="login-card p-shadow-8 p-p-4 p-m-4">
-    <h2>{{ isLogin ? 'Login' : 'Sign Up' }}</h2>
+    <h2>{{ isLogin ? label.login.text : label.signup.text }}</h2>
     <form [formGroup]="form">
         <div class="p-field">
-            <label>Email</label>
+            <label>{{ label.auth.field1 }}</label>
             <input type="text" pInputText formControlName="username"
                 [ngClass]="{'invalid': form.get('username')?.invalid && form.get('username')?.touched}" />
             <small *ngIf="form.get('username')?.touched && form.get('username')?.invalid" class="p-error">
@@ -12,7 +12,7 @@
         </div>
 
         <div class="p-field">
-            <label>Password</label>
+            <label>{{ label.auth.field2 }}</label>
             <input type="password" pInputText formControlName="password"
                 [ngClass]="{'invalid': form.get('password')?.invalid && form.get('password')?.touched}" />
             <small *ngIf="form.get('password')?.touched && form.get('password')?.invalid" class="p-error">
@@ -24,14 +24,14 @@
         </div>
 
         <div class="button-group">
-            <button *ngIf="isLogin" (click)="submit()">Login</button>
-            <button *ngIf="!isLogin" (click)="submit()">Sign Up</button>
+            <button *ngIf="isLogin" (click)="submit()">{{ label.login.text }}</button>
+            <button *ngIf="!isLogin" (click)="submit()">{{ label.signup.text }}</button>
         </div>
     </form>
 
     <p style="margin-top:10px;">
         <a (click)="toggle()">
-            {{ isLogin ? 'Create an account' : 'Already have an account? Login' }}
+            {{ isLogin ? label.signup.desc : label.login.desc }}
         </a>
     </p>
 </div>

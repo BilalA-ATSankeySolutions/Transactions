@@ -1,8 +1,7 @@
-<!-- recent-transactions.component.html -->
 <div class="tx-section">
 
   <div class="tx-header">
-    <h3 class="tx-title">Recent Transaction</h3>
+    <h3 class="tx-title">{{ label.dashboard.recentTransactions }}</h3>
     <button class="arrow-btn" pTooltip="View all" tooltipPosition="left">
       <i class="pi pi-chevron-right"></i>
     </button>
@@ -15,7 +14,7 @@
           <i [class]="tx.iconClass"></i>
         </div>
 
-        <div class="vendor-info">
+        <div class="vendor-info"> 
           <span class="vendor-name">{{ tx.vendor }}</span>
           <span class="vendor-time">{{ tx.timeAgo }}</span>
         </div>

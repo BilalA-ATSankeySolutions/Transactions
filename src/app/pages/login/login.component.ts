@@ -6,6 +6,7 @@ import { AuthService } from "../../services/auth.service";
 import { CommonModule } from '@angular/common';
 import { Router } from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { labels } from "../../utils/json-data";
 
 @Component({
     selector: 'app-login',
@@ -18,6 +19,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
     isLogin = true;
     form!: FormGroup;
+    label = labels;
 
     constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {
         // if (this.auth.isLoggedIn()) {

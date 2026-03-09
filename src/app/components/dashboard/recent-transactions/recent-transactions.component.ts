@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TooltipModule } from 'primeng/tooltip';
+import { labels } from '../../../utils/json-data';
 
 export interface Transaction {
   vendor:   string;
@@ -25,4 +26,6 @@ export class RecentTransactionsComponent {
     { vendor: 'Dribbble', iconClass: 'pi pi-stop-circle', iconBg: '#28101c', timeAgo: '3 hours ago',  amount: 200.00, type: 'Receive'  },
     { vendor: 'Google',   iconClass: 'pi pi-globe',      iconBg: '#101828', timeAgo: '4 hours ago',  amount:  36.94, type: 'Receive'  },
   ];
+
+  label = labels
 }

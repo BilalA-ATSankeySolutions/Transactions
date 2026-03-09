@@ -1,0 +1,12 @@
+<div class="limit-card finity-card">
+    <h3 class="limit-title">{{ label.dashboard.transactionLimit }}</h3>
+    <div class="progress-track">
+        <div class="progress-fill" [style.width.%]="pct"></div>
+    </div>
+    <div class="limit-footer">
+        <span class="limit-info">
+            {{ spent | currency:'USD':'symbol':'1.0-0' }} spent of {{ limit | currency:'USD':'symbol':'1.0-0' }}
+        </span>
+        <span class="limit-pct">{{ pct }}%</span>
+    </div>
+</div>

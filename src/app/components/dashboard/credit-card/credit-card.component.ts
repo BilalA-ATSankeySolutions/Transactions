@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { labels } from '../../../utils/json-data';
 
 @Component({
   selector: 'app-credit-card',
@@ -14,4 +15,6 @@ export class CreditCardComponent {
     holder: 'Sepide Moqadasi',
     isPremium: true,
   };
+  
+  label = labels
 }
