@@ -11,7 +11,9 @@
   box-shadow: $shadow-dark-card;
   padding: $spacing-md 0;
   margin-left: 20px;
-  gap: $spacing-xs;
+  // gap: $spacing-xs;
+  align-self: stretch; // ← key: stretch within shell-sidebar
+  height: 100%;
 
   .sidebar-items {
     list-style: none;
