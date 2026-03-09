@@ -1,13 +1,35 @@
+<!-- shell.component.html -->
 <div class="shell">
+
+  <!-- Top nav: full width -->
   <app-top-nav />
 
+  <!-- Mobile hamburger dropdown (nav links) -->
+  <!-- @if (menuOpen()) {
+    <div class="mobile-nav-overlay" (click)="closeMenu()"></div>
+    <div class="mobile-nav-dropdown">
+      <app-sidebar-nav [mobileMenu]="true" (navClick)="closeMenu()" />
+    </div>
+  } -->
+
+  <!-- Body: sidebar (desktop) + content -->
   <div class="shell-body">
+
+    <!-- Desktop floating sidebar pill -->
     <div class="shell-sidebar">
       <app-sidebar-nav />
     </div>
 
+    <!-- Page content -->
     <main class="shell-content">
       <router-outlet />
     </main>
+
   </div>
+
+  <!-- Mobile bottom tab bar (replaces sidebar on mobile) -->
+  <nav class="bottom-tab-bar">
+    <app-sidebar-nav [bottomBar]="true" />
+  </nav>
+
 </div>

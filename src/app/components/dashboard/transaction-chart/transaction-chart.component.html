@@ -1,16 +1,15 @@
-<!-- transaction-chart.component.html -->
 <div class="chart-card finity-card">
 
   <div class="chart-header">
     <div class="title-group">
-      <h3 class="chart-title">Transactions Overview</h3>
+      <h3 class="chart-title">{{ label.dashboard.card2.title }}</h3>
       <div class="chart-total">{{ totalLabel }}</div>
     </div>
 
     <div class="chart-controls">
       <div class="legend-row">
-        <span class="ldot earning"></span><span class="llabel">Earning</span>
-        <span class="ldot spending"></span><span class="llabel">Spending</span>
+        <span class="ldot earning"></span><span class="llabel">{{ label.dashboard.card2.field1 }}</span>
+        <span class="ldot spending"></span><span class="llabel">{{ label.dashboard.card2.field2 }}</span>
       </div>
 
       <div class="period-select">

@@ -7,6 +7,7 @@ import type {
   ApexTooltip, ApexGrid, ApexFill, ApexStroke,
   ApexLegend, ApexDataLabels, ApexMarkers, ApexAnnotations,
 } from 'ng-apexcharts';
+import { labels } from '../../../utils/json-data';
 
 export interface ChartOptions {
   series: ApexAxisChartSeries;
@@ -41,6 +42,8 @@ export class TransactionChartComponent implements OnInit {
   private months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'];
 
   chartOptions!: Partial<ChartOptions>;
+
+  label = labels;
 
   ngOnInit(): void {
     this.buildChart();

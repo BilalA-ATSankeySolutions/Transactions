@@ -1,8 +1,7 @@
-<!-- financial-goals.component.html -->
 <div class="goals-card finity-card">
 
   <div class="goals-header">
-    <h3 class="goals-title">Financial goals</h3>
+    <h3 class="goals-title">{{ label.dashboard.card3.title }}</h3>
     <button class="arrow-btn">
       <i class="pi pi-chevron-right"></i>
     </button>
@@ -27,17 +26,17 @@
         <!-- Info -->
         <div class="goal-info">
           <span class="goal-name">{{ g.name }}</span>
-          <span class="goal-deadline">Deadline: {{ g.deadline }}</span>
+          <span class="goal-deadline">{{ label.dashboard.card3.subLabel1 }}: {{ g.deadline }}</span>
         </div>
 
         <!-- Amounts -->
         <div class="goal-amounts">
           <div class="amt-col">
-            <span class="amt-label">Saved up</span>
+            <span class="amt-label">{{ label.dashboard.card3.subLabel2 }}</span>
             <span class="amt-val">{{ g.savedUp | currency:'USD':'symbol':'1.0-0' }}</span>
           </div>
           <div class="amt-col">
-            <span class="amt-label">Goal</span>
+            <span class="amt-label">{{ label.dashboard.card3.subLabel3 }}</span>
             <span class="amt-val">{{ g.goal | currency:'USD':'symbol':'1.0-0' }}</span>
           </div>
         </div>

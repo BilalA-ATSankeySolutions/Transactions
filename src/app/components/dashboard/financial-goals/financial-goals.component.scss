@@ -50,7 +50,7 @@
   &:last-child   { border-bottom: none; }
 }
 
-// ── SVG Ring ──────────────────────────────────────────────────
+//  SVG Ring
 .ring-wrap {
   position:   relative;
   width:      40px;
@@ -83,7 +83,7 @@
   }
 }
 
-// ── Goal info ─────────────────────────────────────────────────
+// Goal info
 .goal-info {
   flex:           1;
   display:        flex;
@@ -106,7 +106,7 @@
   }
 }
 
-// ── Amounts ───────────────────────────────────────────────────
+// Amounts 
 .goal-amounts {
   display:    flex;
   gap:        $spacing-lg;

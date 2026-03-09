@@ -1,15 +1,53 @@
-<aside class="sidebar">
+@if (bottomBar) {
 
+<div class="bottom-tabs">
+
+  @for (item of items; track item.route) {
+  <a class="tab-item" [routerLink]="item.route" routerLinkActive="active">
+
+    <i [class]="item.icon"></i>
+    <span class="tab-label">{{ item.label }}</span>
+
+  </a>
+  }
+
+  <!-- More menu -->
+  <button class="tab-item more-btn" (click)="toggleMore()">
+    <i class="pi pi-ellipsis-h"></i>
+    <span class="tab-label">More</span>
+  </button>
+
+</div>
+
+@if(showMore){
+<div class="mobile-more-menu">
+
+  <button class="menu-item">
+    <i class="pi pi-cog"></i>
+    Settings
+  </button>
+
+  <button class="menu-item" (click)="logout()">
+    <i class="pi pi-sign-out"></i>
+    Logout
+  </button>
+
+</div>
+}
+
+}
+
+<!-- ── DESKTOP FLOATING PILL ─────────────────────────────────── -->
+@else {
+<aside class="sidebar">
   <ul class="sidebar-items">
     @for (item of items; track item.route) {
-      <li routerLinkActive="active">
-        <a class="sb-btn"
-           [routerLink]="item.route"
-           [pTooltip]="item.label"
-           tooltipPosition="right">
-          <i [class]="item.icon"></i>
-        </a>
-      </li>
+    <li routerLinkActive="active">
+      <a class="sb-btn" [routerLink]="item.route" [pTooltip]="item.label" tooltipPosition="right"
+        (click)="onNavClick()">
+        <i [class]="item.icon"></i>
+      </a>
+    </li>
     }
   </ul>
 
@@ -23,5 +61,5 @@
       <i class="pi pi-sign-out"></i>
     </button>
   </div>
-
 </aside>
+}

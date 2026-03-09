@@ -5,7 +5,7 @@ import { labels } from '../../../utils/json-data';
 
 export interface Transaction {
   vendor:   string;
-  iconClass: string;  // PrimeIcons class
+  iconClass: string; 
   iconBg:   string;
   timeAgo:  string;
   amount:   number;

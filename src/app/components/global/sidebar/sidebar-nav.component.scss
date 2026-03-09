@@ -1,89 +1,169 @@
 @use '../../../styles/constants' as *;
 
 .sidebar {
-  display:         flex;
-  flex-direction:  column;
-  align-items:     center;
-  width:           52px;
-  background:      var(--bg-card);
-  border-radius:   $border-radius-xl;      
-  border:          1px solid var(--border-color);
-  box-shadow:      $shadow-dark-card;
-  padding:         $spacing-md 0;
-  gap:             $spacing-xs;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 52px;
+  background: var(--bg-card);
+  border-radius: $border-radius-xl;
+  border: 1px solid var(--border-color);
+  box-shadow: $shadow-dark-card;
+  padding: $spacing-md 0;
+  gap: $spacing-xs;
+
+  .sidebar-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    width: 100%;
+    padding: $spacing-xs 0;
+
+    li {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      &.active {
+        .sb-btn {
+          background: $purple-primary;
+          color: #fff;
+          box-shadow: $shadow-purple;
+        }
+      }
+    }
+  }
+
+  .sidebar-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--border-color);
+    margin: $spacing-xs 0;
+    flex-shrink: 0;
+  }
+
+  .sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    padding: $spacing-xs 0;
+  }
 }
 
-// Nav items
-.sidebar-items {
-  list-style:      none;
-  display:         flex;
-  flex-direction:  column;
-  align-items:     center;
-  gap:             4px;
-  flex:            1;
-  width:           100%;
-  padding:         $spacing-xs 0;
+.sb-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: $border-radius-md;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all $transition-fast;
 
-  li {
-    position:        relative;
-    width:           100%;
-    display:         flex;
-    justify-content: center;
+  i {
+    font-size: 1rem;
+  }
 
-    &.active .sb-btn {
-      background: $purple-primary;
-      color:      #fff;
-      box-shadow: $shadow-purple;
+  &:hover {
+    background: var(--bg-input);
+    color: var(--text-primary);
+  }
+
+  &.logout {
+    color: $red-danger !important;
+
+    &:hover {
+      background: rgba($red-danger, 0.1) !important;
+      color: $red-danger !important;
     }
   }
 }
 
-// Button
-.sb-btn {
-  display:         flex;
-  align-items:     center;
-  justify-content: center;
-  width:           38px;
-  height:          38px;
-  border-radius:   $border-radius-md;
-  border:          none;
-  background:      transparent;
-  color:           var(--text-muted);
-  cursor:          pointer;
-  text-decoration: none;
-  transition:      all $transition-fast;
+.navbar-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--border-color);
+  margin: $spacing-xs 0;
+  margin-left: 10px;
+  margin-top: 15px;
+}
 
-  i { font-size: 1rem; }
+.navbar-bottom {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 
-  &:hover {
-    background: var(--bg-input);
-    color:      var(--text-primary);
+  .sb-btn {
+    width: 32px;
+    height: 32px;
   }
 }
 
-// Divider between nav and bottom actions 
-.sidebar-divider {
-  width:        32px;
-  height:       1px;
-  background:   var(--border-color);
-  margin:       $spacing-xs 0;
-  flex-shrink:  0;
+.bottom-tabs {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  .tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 4px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 10px;
+
+    i {
+      font-size: 18px;
+    }
+
+    &.active {
+      color: $purple-primary;
+    }
+  }
 }
 
-// Bottom actions
-.sidebar-bottom {
-  display:         flex;
-  flex-direction:  column;
-  align-items:     center;
-  gap:             4px;
-  width:           100%;
-  padding:         $spacing-xs 0;
-}
+.mobile-more-menu {
+  position: fixed;
+  bottom: 70px;
+  right: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: $shadow-dark-card;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  gap: 4px;
+  z-index: 200;
 
-.logout {
-  color: $red-danger !important;
-  &:hover {
-    background: rgba($red-danger, 0.1) !important;
-    color:      $red-danger !important;
+  .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border: none;
+    background: transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+    border-radius: 6px;
+
+    &:hover {
+      background: var(--bg-input);
+    }
   }
 }

@@ -1,49 +1,70 @@
+<!-- top-nav.component.html -->
 <nav class="top-nav">
 
   <!-- Brand -->
   <div class="brand">
     <div class="brand-icon">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-              stroke="white" stroke-width="2.2"
-              stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="white" stroke-width="2.2"
+          stroke-linecap="round" stroke-linejoin="round" />
       </svg>
     </div>
     <span class="brand-name">Finity</span>
   </div>
 
-  <!-- Nav Links -->
+  <!-- Desktop: nav link pills -->
   <ul class="nav-links">
-    @for (link of navLinks; track link.label) {
-      <li>
-        <a class="nav-link" [class.active]="link.active" (click)="setActive(link)">
-          {{ link.label }}
-        </a>
-      </li>
+    @for (link of navLinks; track link.route) {
+    <li>
+      <a class="nav-link" [routerLink]="link.route" routerLinkActive="active">
+        {{ link.label }}
+      </a>
+    </li>
     }
   </ul>
 
-  <!-- Actions -->
+  <!-- Right actions -->
   <div class="nav-actions">
-    <button class="icon-btn" pTooltip="Search" tooltipPosition="bottom">
+    <button class="icon-btn hide-xs" pTooltip="Search" tooltipPosition="bottom">
       <i class="pi pi-search"></i>
     </button>
     <button class="icon-btn notif-btn" pTooltip="Notifications" tooltipPosition="bottom">
       <i class="pi pi-bell"></i>
       <span class="notif-dot"></span>
     </button>
-    <button class="icon-btn" pTooltip="Help" tooltipPosition="bottom">
+    <button class="icon-btn hide-mobile" pTooltip="Help" tooltipPosition="bottom">
       <i class="pi pi-question-circle"></i>
     </button>
 
+    <div class="theme-switch" (click)="toggleTheme()" [class.dark]="theme.theme() === 'light' ? false : true">
+      <div class="toggle-circle">
+        <i class="pi" [ngClass]="theme.theme() === 'dark' ? 'pi-moon' : 'pi-sun'"></i>
+      </div>
+    </div>
+
     <div class="user-chip">
       <img class="user-avatar" src="https://i.pravatar.cc/32?img=47" alt="Avatar" />
-      <div class="user-text">
+      <div class="user-text hide-mobile">
         <span class="user-name">Oripio Studio</span>
         <span class="user-email">oripiostudio&#64;gmail.com</span>
       </div>
-      <i class="pi pi-chevron-down chevron-icon"></i>
+      <i class="pi pi-chevron-down chevron-icon hide-mobile"></i>
     </div>
+
+    <!-- Mobile only: hamburger for nav links -->
+    <button class="hamburger mobile-only" [class.is-open]="menuOpen()" (click)="menuOpen.set(!menuOpen())"
+      aria-label="Toggle menu">
+      <i class="pi" [class.pi-bars]="!menuOpen()" [class.pi-times]="menuOpen()"></i>
+    </button>
+
   </div>
+  @if (menuOpen()) {
+  <div class="mobile-menu">
+    <a *ngFor="let link of navLinks" class="mobile-nav-link" [routerLink]="link.route" routerLinkActive="active"
+      (click)="menuOpen.set(!menuOpen())">
+      {{ link.label }}
+    </a>
+  </div>
+  }
 
 </nav>

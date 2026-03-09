@@ -1,8 +1,4 @@
-// ============================================================
-// _constants.scss — Finity Design System Tokens
-// ============================================================
-
-// ── Brand / Primary ──────────────────────────────────────────
+//  Brand / Primary
 $primary-color:       #1976d2;
 $primary-hover-color: #125aa1;
 $link-color:          #007ad9;
@@ -12,7 +8,7 @@ $accent-color:        #e74c3c;
 $background-color:    #f5f5f5;
 $card-background:     #ffffff;
 
-// ── Dark Theme Surface Palette ───────────────────────────────
+// Dark Theme Surface Palette 
 $dark-bg-base:          #0d1117;
 $dark-bg-surface:       #131925;
 $dark-bg-card:          #171e2e;
@@ -29,7 +25,7 @@ $dark-text-secondary:   #7e8da8;
 $dark-text-muted:       #4e5d78;
 $dark-text-label:       #617090;
 
-// ── Accent Colors ────────────────────────────────────────────
+// Accent Colors 
 $purple-primary:  #7c5cfc;
 $purple-light:    #9b7dfd;
 $purple-dark:     #5a3fd4;
@@ -47,11 +43,11 @@ $green-glow:      rgba(34, 197, 94, 0.15);
 $orange-warning:  #f59e0b;
 $red-danger:      #ef4444;
 
-// ── Chart Palette ────────────────────────────────────────────
+//  Chart Palette
 $chart-earning:   #7c5cfc;
 $chart-spending:  #00d4b4;
 
-// ── Spacing ──────────────────────────────────────────────────
+// Spacing
 $spacing-xs:  4px;
 $spacing-sm:  8px;
 $spacing-md:  16px;
@@ -59,14 +55,14 @@ $spacing-lg:  24px;
 $spacing-xl:  32px;
 $spacing-xxl: 48px;
 
-// ── Border Radius ────────────────────────────────────────────
+// Border Radius 
 $border-radius-sm:   4px;
 $border-radius-md:   8px;
 $border-radius-lg:   14px;
 $border-radius-xl:   20px;
 $border-radius-full: 50%;
 
-// ── Shadows ──────────────────────────────────────────────────
+// Shadows
 $shadow-card:       0 2px 8px rgba(0, 0, 0, 0.05);
 $shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
 $shadow-navbar:     0 2px 8px rgba(0, 0, 0, 0.2);
@@ -74,7 +70,7 @@ $shadow-card-white: 0 4px 16px rgba(0, 0, 0, 0.08);
 $shadow-dark-card:  0 4px 24px rgba(0, 0, 0, 0.5);
 $shadow-purple:     0 4px 20px rgba(124, 92, 252, 0.35);
 
-// ── Typography ───────────────────────────────────────────────
+// Typography
 $font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 $font-family-mono: 'JetBrains Mono', monospace;
 
@@ -92,18 +88,18 @@ $font-weight-medium:  500;
 $font-weight-semi:    600;
 $font-weight-bold:    700;
 
-// ── Transitions ──────────────────────────────────────────────
+// Transitions
 $transition-fast:   0.15s ease;
 $transition-normal: 0.25s ease;
 $transition-slow:   0.4s ease;
 
-// ── Z-index Scale ────────────────────────────────────────────
+// Z-index Scale
 $z-sidebar: 100;
 $z-navbar:  200;
 $z-modal:   300;
 $z-tooltip: 400;
 
-// ── Layout Dimensions ────────────────────────────────────────
+// Layout Dimensions
 $sidebar-width:       78px;
 $topnav-height:       60px;
 $right-panel-width:   272px;
@@ -113,3 +109,17 @@ $text-light: #ffffff;
 $text-dark: #1a1a2e;
 $text-muted: #64748b;
 $text-heading: #1e293b;
+
+// Breakpoints
+$bp-mobile:  768px;
+$bp-tablet:  1024px;
+$bp-desktop: 1280px;
+
+// Responsive mixins
+@mixin mobile  { @media (max-width: #{$bp-mobile - 1px})  { @content; } }
+@mixin tablet  { @media (max-width: #{$bp-tablet - 1px})  { @content; } }
+@mixin desktop { @media (min-width: #{$bp-desktop})        { @content; } }
+
+// Mobile z-index additions
+$z-drawer:   250;   // sidebar drawer sits above content but below modals
+$z-overlay:  240;   // dark overlay behind drawer

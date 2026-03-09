@@ -1,36 +1,128 @@
 @use '../../styles/constants' as *;
 
 .shell {
-  display:        flex;
-  flex-direction: column;  
-  height:         100%;
-  width:          100%;
-  background:     var(--bg-base);
-  overflow:       hidden;
-}
-
-.shell-body {
-  flex:       1;
-  min-height: 0;            
-  display:    flex;
-  overflow:   hidden;
-}
-
-.shell-sidebar {
-  width:           $sidebar-width;
-  min-width:       $sidebar-width;
-  flex-shrink:     0;
-  display:         flex;
-  align-items:     center;     
-  justify-content: center;
-  padding:         $spacing-md 0;
-}
-
-.shell-content {
-  flex:           1;
-  min-height:     0;
-  min-width:      0;
-  overflow-y:     auto;
-  display:        flex;
+  display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: var(--bg-base);
+  overflow: visible;
+  position: relative;
+
+  // ── Body: sidebar pill + page content ────────────────────────
+  .shell-body {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    overflow: hidden;
+
+    // ── Desktop sidebar column ────────────────────────────────────
+    .shell-sidebar {
+      width: $sidebar-width;
+      min-width: $sidebar-width;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: $spacing-md 0;
+
+      // Hide on mobile — bottom bar takes over
+      @include mobile {
+        display: none;
+      }
+    }
+
+    // ── Scrollable page content ───────────────────────────────────
+    .shell-content {
+      flex: 1;
+      min-height: 0;
+      min-width: 0;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+
+      // Add bottom padding so content isn't hidden behind bottom bar
+      @include mobile {
+        padding-bottom: 80px;
+      }
+    }
+  }
+
+  // ── Mobile hamburger dropdown (nav links) ─────────────────────
+  .mobile-nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: $z-overlay;
+    animation: fadeIn 0.15s ease;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  .mobile-nav-dropdown {
+    position: fixed;
+    top: $topnav-height;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    z-index: $z-drawer;
+    animation: slideDown 0.2s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  // ── Mobile bottom tab bar ─────────────────────────────────────
+  .bottom-tab-bar {
+    display: none;
+
+    @include mobile {
+      display: flex;
+
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      width: 100vw;
+      height: 64px;
+
+      background: var(--bg-card);
+      border-top: 1px solid var(--border-color);
+
+      z-index: 150;
+      box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.45);
+
+      app-sidebar-nav {
+        display: contents;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

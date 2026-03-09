@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { labels } from '../../../utils/json-data';
 
 export interface Goal {
   name:     string;
@@ -24,6 +25,8 @@ export class FinancialGoalsComponent {
     { name: 'For a new house',deadline: 'May 12, 2027',     savedUp: 120300,  goal: 250000, progress: 75, color: '#7c5cfc' },
     { name: 'For a new Bike', deadline: 'March 1, 2026',    savedUp:    800,  goal:   3200, progress: 25, color: '#ff6b9d' },
   ];
+
+  label = labels;
 
   /** SVG stroke-dasharray for the ring fill */
   ringDash(progress: number): string {

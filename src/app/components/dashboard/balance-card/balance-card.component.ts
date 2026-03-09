@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule, CurrencyPipe } from '@angular/common';
+import { labels } from '../../../utils/json-data';
 
 @Component({
   selector: 'app-balance-card',
@@ -15,4 +16,6 @@ export class BalanceCardComponent {
   readonly creditSpent       = 3000;
   readonly growthRate        = '3.2';
   readonly creditUsedPercent = 45;
+
+  label = labels;
 }

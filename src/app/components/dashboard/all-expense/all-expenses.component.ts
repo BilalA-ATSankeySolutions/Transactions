@@ -6,6 +6,7 @@ import type {
   ApexPlotOptions, ApexTooltip, ApexLegend,
   ApexDataLabels, ApexStroke,
 } from 'ng-apexcharts';
+import { labels } from '../../../utils/json-data';
 
 export interface DonutOptions {
   series: ApexNonAxisChartSeries;
@@ -39,6 +40,8 @@ export class AllExpensesComponent implements OnInit {
   ];
 
   donut!: Partial<DonutOptions>;
+
+  label = labels
 
   ngOnInit(): void {
     this.donut = {
