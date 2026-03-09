@@ -1,0 +1,49 @@
+<nav class="top-nav">
+
+  <!-- Brand -->
+  <div class="brand">
+    <div class="brand-icon">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+              stroke="white" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <span class="brand-name">Finity</span>
+  </div>
+
+  <!-- Nav Links -->
+  <ul class="nav-links">
+    @for (link of navLinks; track link.label) {
+      <li>
+        <a class="nav-link" [class.active]="link.active" (click)="setActive(link)">
+          {{ link.label }}
+        </a>
+      </li>
+    }
+  </ul>
+
+  <!-- Actions -->
+  <div class="nav-actions">
+    <button class="icon-btn" pTooltip="Search" tooltipPosition="bottom">
+      <i class="pi pi-search"></i>
+    </button>
+    <button class="icon-btn notif-btn" pTooltip="Notifications" tooltipPosition="bottom">
+      <i class="pi pi-bell"></i>
+      <span class="notif-dot"></span>
+    </button>
+    <button class="icon-btn" pTooltip="Help" tooltipPosition="bottom">
+      <i class="pi pi-question-circle"></i>
+    </button>
+
+    <div class="user-chip">
+      <img class="user-avatar" src="https://i.pravatar.cc/32?img=47" alt="Avatar" />
+      <div class="user-text">
+        <span class="user-name">Oripio Studio</span>
+        <span class="user-email">oripiostudio&#64;gmail.com</span>
+      </div>
+      <i class="pi pi-chevron-down chevron-icon"></i>
+    </div>
+  </div>
+
+</nav>

@@ -1,1 +1,133 @@
-/* You can add global styles to this file, and also import other style files */
+/* ============================================================
+   styles.scss — Finity Global Styles (Angular 21 + PrimeNG 21)
+   ============================================================ */
+@use './app/styles/constants' as *;
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ── CSS Custom Properties ────────────────────────────────── */
+:root {
+  --font-base:         #{$font-family-base};
+
+  /* Light theme defaults */
+  --bg-base:           #{$background-color};
+  --bg-surface:        #ebebeb;
+  --bg-card:           #{$card-background};
+  --bg-card-elevated:  #f4f4f4;
+  --bg-input:          #eef0f5;
+  --bg-sidebar:        #ffffff;
+  --bg-nav:            #ffffff;
+
+  --border-color:      rgba(0, 0, 0, 0.08);
+  --border-subtle:     rgba(0, 0, 0, 0.04);
+
+  --text-primary:      #1a1f2e;
+  --text-secondary:    #5a6478;
+  --text-muted:        #8a94a8;
+  --text-label:        #6b7690;
+
+  /* Accent tokens always available */
+  --purple-primary:    #{$purple-primary};
+  --purple-light:      #{$purple-light};
+  --purple-dark:       #{$purple-dark};
+  --purple-glow:       #{$purple-glow};
+  --teal-accent:       #{$teal-accent};
+  --pink-accent:       #{$pink-accent};
+  --green-success:     #{$green-success};
+  --orange-warning:    #{$orange-warning};
+  --red-danger:        #{$red-danger};
+
+  /* Layout */
+  --sidebar-width:       #{$sidebar-width};
+  --topnav-height:       #{$topnav-height};
+  --right-panel-width:   #{$right-panel-width};
+
+  /* Misc */
+  --shadow-card:         #{$shadow-card};
+  --shadow-dark-card:    #{$shadow-dark-card};
+  --shadow-purple:       #{$shadow-purple};
+  --border-radius-sm:    #{$border-radius-sm};
+  --border-radius-md:    #{$border-radius-md};
+  --border-radius-lg:    #{$border-radius-lg};
+  --border-radius-xl:    #{$border-radius-xl};
+  --transition-fast:     #{$transition-fast};
+  --transition-normal:   #{$transition-normal};
+}
+
+/* ── Dark Theme ───────────────────────────────────────────── */
+[data-theme='dark'] {
+  --bg-base:           #{$dark-bg-base};
+  --bg-surface:        #{$dark-bg-surface};
+  --bg-card:           #{$dark-bg-card};
+  --bg-card-elevated:  #{$dark-bg-card-elevated};
+  --bg-input:          #{$dark-bg-input};
+  --bg-sidebar:        #{$dark-bg-sidebar};
+  --bg-nav:            #{$dark-bg-nav};
+
+  --border-color:      #{$dark-border};
+  --border-subtle:     #{$dark-border-subtle};
+
+  --text-primary:      #{$dark-text-primary};
+  --text-secondary:    #{$dark-text-secondary};
+  --text-muted:        #{$dark-text-muted};
+  --text-label:        #{$dark-text-label};
+
+  --shadow-card:       0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Reset ────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: var(--font-base);
+  font-size: 14px;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 4px; height: 4px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  {
+  background: var(--border-color);
+  border-radius: 4px;
+  &:hover { background: var(--text-muted); }
+}
+
+/* ── Shared Card Base ─────────────────────────────────────── */
+.finity-card {
+  background:    var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  border:        1px solid var(--border-color);
+  padding:       #{$spacing-lg};
+  box-shadow:    var(--shadow-card);
+}
+
+/* ── Utility ──────────────────────────────────────────────── */
+.text-muted-clr    { color: var(--text-muted); }
+.text-secondary-clr{ color: var(--text-secondary); }
+.text-purple       { color: var(--purple-primary); }
+.text-teal         { color: var(--teal-accent); }
+.text-green        { color: var(--green-success); }
+.text-pink         { color: var(--pink-accent); }
+
+/* ── PrimeNG global reset ─────────────────────────────────── */
+.p-component,
+.p-button {
+  font-family: var(--font-base) !important;
+}

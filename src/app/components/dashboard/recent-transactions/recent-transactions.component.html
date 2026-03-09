@@ -1,0 +1,35 @@
+<!-- recent-transactions.component.html -->
+<div class="tx-section">
+
+  <div class="tx-header">
+    <h3 class="tx-title">Recent Transaction</h3>
+    <button class="arrow-btn" pTooltip="View all" tooltipPosition="left">
+      <i class="pi pi-chevron-right"></i>
+    </button>
+  </div>
+
+  <div class="tx-list">
+    @for (tx of transactions; track tx.vendor) {
+      <div class="tx-row">
+        <div class="vendor-icon" [style.background]="tx.iconBg">
+          <i [class]="tx.iconClass"></i>
+        </div>
+
+        <div class="vendor-info">
+          <span class="vendor-name">{{ tx.vendor }}</span>
+          <span class="vendor-time">{{ tx.timeAgo }}</span>
+        </div>
+
+        <div class="tx-right">
+          <span class="tx-amount" [class.debit]="tx.type === 'Transfer'">
+            {{ tx.type === 'Transfer' ? '-' : '+' }}{{ tx.amount | currency:'USD':'symbol':'1.2-2' }}
+          </span>
+          <span class="tx-badge" [class.transfer]="tx.type === 'Transfer'" [class.receive]="tx.type === 'Receive'">
+            {{ tx.type }}
+          </span>
+        </div>
+      </div>
+    }
+  </div>
+
+</div>

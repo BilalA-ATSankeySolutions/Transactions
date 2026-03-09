@@ -1,0 +1,35 @@
+<!-- all-expenses.component.html -->
+<div class="expenses-card finity-card">
+
+  <div class="expenses-header">
+    <h3 class="expenses-title">All Expenses</h3>
+    <button class="menu-btn"><i class="pi pi-ellipsis-h"></i></button>
+  </div>
+
+  <div class="expenses-body">
+    <div class="donut-wrap">
+      @if (donut) {
+        <apx-chart
+          [series]="donut.series!"
+          [chart]="donut.chart!"
+          [labels]="donut.labels!"
+          [colors]="donut.colors!"
+          [plotOptions]="donut.plotOptions!"
+          [stroke]="donut.stroke!"
+          [dataLabels]="donut.dataLabels!"
+          [legend]="donut.legend!"
+          [tooltip]="donut.tooltip!" />
+      }
+    </div>
+
+    <div class="legend-grid">
+      @for (cat of categories; track cat.label) {
+        <div class="leg-item">
+          <span class="leg-dot" [style.background]="cat.color"></span>
+          <span class="leg-label">{{ cat.label }}</span>
+        </div>
+      }
+    </div>
+  </div>
+
+</div>

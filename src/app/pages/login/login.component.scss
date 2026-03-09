@@ -1,0 +1,117 @@
+@use '../../styles/constants' as *;
+
+// ── Host must fill the full viewport for flex centering to work
+:host {
+  display:         flex;
+  height:          100%;          // inherits from app-root/body chain
+  width:           100%;
+  justify-content: center;
+  align-items:     center;
+  background:      var(--bg-base);
+}
+
+// ── Card ──────────────────────────────────────────────────────
+.login-card {
+  width:            100%;
+  max-width:        420px;
+  padding:          $spacing-xl;
+  border-radius:    $border-radius-xl;
+  background:       var(--bg-card);
+  border:           1px solid var(--border-color);
+  box-shadow:       $shadow-dark-card;
+}
+
+.login-card h2 {
+  margin-bottom:  $spacing-xl;
+  font-weight:    $font-weight-bold;
+  font-size:      $font-size-xl;
+  text-align:     center;
+  color:          var(--text-primary);
+  letter-spacing: -0.3px;
+}
+
+// ── Fields ────────────────────────────────────────────────────
+.p-field {
+  display:         flex;
+  flex-direction:  column;
+  margin-bottom:   $spacing-md;
+}
+
+.p-field label {
+  margin-bottom: $spacing-xs;
+  font-weight:   $font-weight-semi;
+  font-size:     $font-size-sm;
+  color:         var(--text-secondary);
+}
+
+.p-field input {
+  padding:       10px $spacing-sm;
+  font-size:     $font-size-base;
+  font-family:   var(--font-base);
+  background:    var(--bg-input);
+  border:        1px solid var(--border-color);
+  border-radius: $border-radius-md;
+  color:         var(--text-primary);
+  outline:       none;
+  transition:    border-color $transition-fast, box-shadow $transition-fast;
+
+  &::placeholder { color: var(--text-muted); }
+
+  &:focus {
+    border-color: $purple-primary;
+    box-shadow:   0 0 0 3px $purple-glow;
+  }
+
+  &.invalid {
+    border-color: $red-danger;
+    box-shadow:   0 0 0 3px rgba($red-danger, 0.15);
+  }
+}
+
+// ── Buttons ───────────────────────────────────────────────────
+.button-group {
+  display:        flex;
+  justify-content: center;
+  margin-top:     $spacing-lg;
+
+  button {
+    width:         100%;
+    padding:       11px;
+    border:        none;
+    border-radius: $border-radius-lg;
+    background:    $purple-primary;
+    color:         #fff;
+    cursor:        pointer;
+    font-size:     $font-size-base;
+    font-weight:   $font-weight-semi;
+    font-family:   var(--font-base);
+    box-shadow:    $shadow-purple;
+    transition:    all $transition-fast;
+
+    &:hover { background: $purple-dark; }
+  }
+}
+
+// ── Footer link ───────────────────────────────────────────────
+p {
+  text-align:  center;
+  margin-top:  $spacing-md;
+  font-size:   $font-size-sm;
+  color:       var(--text-muted);
+
+  a {
+    cursor:          pointer;
+    color:           $purple-light;
+    text-decoration: none;
+    font-weight:     $font-weight-medium;
+
+    &:hover { color: $purple-primary; text-decoration: underline; }
+  }
+}
+
+// ── Validation errors ─────────────────────────────────────────
+.p-error {
+  color:      $red-danger;
+  font-size:  $font-size-xs;
+  margin-top: 4px;
+}

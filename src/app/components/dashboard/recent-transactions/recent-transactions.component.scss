@@ -1,0 +1,98 @@
+@use '../../../styles/constants' as *;
+
+:host { display: block; }
+
+.tx-section {
+  display:        flex;
+  flex-direction: column;
+  gap:            $spacing-md;
+}
+
+.tx-header {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+
+  .tx-title { font-size: $font-size-md; font-weight: $font-weight-semi; color: var(--text-primary); }
+
+  .arrow-btn {
+    width:           26px;
+    height:          26px;
+    border-radius:   50%;
+    border:          1px solid var(--border-color);
+    background:      var(--bg-input);
+    color:           var(--text-secondary);
+    cursor:          pointer;
+    display:         flex;
+    align-items:     center;
+    justify-content: center;
+    transition:      all $transition-fast;
+    i { font-size: 0.6rem; }
+    &:hover { background: $purple-primary; border-color: $purple-primary; color: #fff; }
+  }
+}
+
+.tx-list {
+  display:        flex;
+  flex-direction: column;
+}
+
+.tx-row {
+  display:       flex;
+  align-items:   center;
+  gap:           $spacing-sm;
+  padding:       10px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  &:last-child { border-bottom: none; }
+}
+
+// ── Vendor icon ───────────────────────────────────────────────
+.vendor-icon {
+  width:           36px;
+  height:          36px;
+  border-radius:   $border-radius-md;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  flex-shrink:     0;
+  border:          1px solid rgba(255,255,255,0.05);
+
+  i { font-size: 0.875rem; color: var(--text-secondary); }
+}
+
+// ── Vendor info ───────────────────────────────────────────────
+.vendor-info {
+  flex:           1;
+  display:        flex;
+  flex-direction: column;
+  gap:            2px;
+  min-width:      0;
+
+  .vendor-name { font-size: $font-size-sm;  font-weight: $font-weight-semi; color: var(--text-primary); }
+  .vendor-time { font-size: $font-size-xs;  color: var(--text-muted); white-space: nowrap; }
+}
+
+// ── Amount + badge ────────────────────────────────────────────
+.tx-right {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-end;
+  gap:            2px;
+
+  .tx-amount {
+    font-size:   $font-size-sm;
+    font-weight: $font-weight-bold;
+    color:       var(--text-primary);
+
+    &.debit { color: var(--text-primary); }
+  }
+
+  .tx-badge {
+    font-size:     $font-size-xs;
+    padding:       1px 7px;
+    border-radius: $border-radius-sm;
+
+    &.transfer { color: $orange-warning; background: rgba($orange-warning, 0.1); }
+    &.receive  { color: $green-success;  background: rgba($green-success,  0.1); }
+  }
+}

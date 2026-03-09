@@ -1,0 +1,27 @@
+<aside class="sidebar">
+
+  <ul class="sidebar-items">
+    @for (item of items; track item.route) {
+      <li routerLinkActive="active">
+        <a class="sb-btn"
+           [routerLink]="item.route"
+           [pTooltip]="item.label"
+           tooltipPosition="right">
+          <i [class]="item.icon"></i>
+        </a>
+      </li>
+    }
+  </ul>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="sidebar-bottom">
+    <button class="sb-btn" pTooltip="Settings" tooltipPosition="right">
+      <i class="pi pi-cog"></i>
+    </button>
+    <button class="sb-btn logout" pTooltip="Logout" tooltipPosition="right" (click)="logout()">
+      <i class="pi pi-sign-out"></i>
+    </button>
+  </div>
+
+</aside>

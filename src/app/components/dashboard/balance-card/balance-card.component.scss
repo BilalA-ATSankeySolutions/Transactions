@@ -1,0 +1,120 @@
+@use '../../../styles/constants' as *;
+
+:host { display: block; height: 100%; }
+
+.balance-card {
+  height:         100%;
+  display:        flex;
+  flex-direction: column;
+  gap:            $spacing-md;
+}
+
+.card-label {
+  font-size:   $font-size-sm;
+  color:       var(--text-secondary);
+  font-weight: $font-weight-medium;
+}
+
+// ── Balance Row ───────────────────────────────────────────────
+.balance-row {
+  display:     flex;
+  align-items: center;
+  gap:         $spacing-sm;
+
+  .balance-amount {
+    font-size:      $font-size-xxl;
+    font-weight:    $font-weight-bold;
+    color:          var(--text-primary);
+    letter-spacing: -0.5px;
+    line-height:    1;
+  }
+
+  .growth-badge {
+    display:        flex;
+    align-items:    center;
+    gap:            3px;
+    background:     rgba($green-success, 0.12);
+    color:          $green-success;
+    font-size:      $font-size-xs;
+    font-weight:    $font-weight-semi;
+    padding:        3px 8px;
+    border-radius:  $border-radius-md;
+
+    i { font-size: 0.6rem; }
+  }
+}
+
+// ── Action Buttons ────────────────────────────────────────────
+.action-btns {
+  display: flex;
+  gap:     $spacing-sm;
+
+  button {
+    flex:          1;
+    padding:       10px;
+    border-radius: $border-radius-lg;
+    font-size:     $font-size-sm;
+    font-weight:   $font-weight-semi;
+    font-family:   var(--font-base);
+    cursor:        pointer;
+    border:        none;
+    transition:    all $transition-fast;
+  }
+
+  .btn-deposit {
+    background:   var(--bg-input);
+    color:        var(--text-primary);
+    border:       1px solid var(--border-color);
+    &:hover { background: var(--bg-card-elevated); }
+  }
+
+  .btn-transfer {
+    background: $purple-primary;
+    color:      #fff;
+    box-shadow: $shadow-purple;
+    &:hover { background: $purple-dark; }
+  }
+}
+
+// ── Sub Balances ──────────────────────────────────────────────
+.sub-balances {
+  display:         flex;
+  justify-content: space-between;
+
+  .sub-item {
+    display:        flex;
+    flex-direction: column;
+    gap:            2px;
+
+    .sub-label { font-size: $font-size-xs;  color: var(--text-muted); }
+    .sub-val   { font-size: $font-size-md;  font-weight: $font-weight-bold; color: var(--text-primary); }
+  }
+}
+
+// ── Credit Progress ───────────────────────────────────────────
+.credit-section {
+  margin-top: auto;
+
+  .progress-track {
+    height:        6px;
+    background:    var(--bg-input);
+    border-radius: 10px;
+    overflow:      hidden;
+    margin-bottom: $spacing-xs;
+
+    .progress-fill {
+      height:        100%;
+      background:    linear-gradient(90deg, $purple-primary, $purple-light);
+      border-radius: 10px;
+      transition:    width $transition-slow;
+    }
+  }
+
+  .credit-footer {
+    display:         flex;
+    justify-content: space-between;
+
+    .credit-spent-label { font-size: $font-size-xs; color: var(--text-muted); }
+    .credit-pct         { font-size: $font-size-xs; font-weight: $font-weight-semi; color: var(--text-secondary); }
+  }
+}

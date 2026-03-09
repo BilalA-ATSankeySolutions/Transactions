@@ -1,0 +1,40 @@
+<!-- balance-card.component.html -->
+<div class="balance-card finity-card">
+
+  <span class="card-label">Total balance</span>
+
+  <div class="balance-row">
+    <h2 class="balance-amount">{{ totalBalance | currency:'USD':'symbol':'1.0-0' }}</h2>
+    <div class="growth-badge">
+      <i class="pi pi-arrow-up-right"></i>
+      {{ growthRate }}
+    </div>
+  </div>
+
+  <div class="action-btns">
+    <button class="btn-deposit">Deposit</button>
+    <button class="btn-transfer">Transfer</button>
+  </div>
+
+  <div class="sub-balances">
+    <div class="sub-item">
+      <span class="sub-label">Main balance</span>
+      <span class="sub-val">{{ mainBalance | currency:'USD':'symbol':'1.0-0' }}</span>
+    </div>
+    <div class="sub-item">
+      <span class="sub-label">Credit balance</span>
+      <span class="sub-val">{{ creditBalance | currency:'USD':'symbol':'1.0-0' }}</span>
+    </div>
+  </div>
+
+  <div class="credit-section">
+    <div class="progress-track">
+      <div class="progress-fill" [style.width.%]="creditUsedPercent"></div>
+    </div>
+    <div class="credit-footer">
+      <span class="credit-spent-label">{{ creditSpent | currency:'USD':'symbol':'1.0-0' }} credit spent</span>
+      <span class="credit-pct">{{ creditUsedPercent }}%</span>
+    </div>
+  </div>
+
+</div>

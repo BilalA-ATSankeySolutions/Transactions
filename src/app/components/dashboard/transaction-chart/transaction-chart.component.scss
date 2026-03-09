@@ -1,0 +1,90 @@
+@use '../../../styles/constants' as *;
+
+:host { display: block; height: 100%; }
+
+.chart-card {
+  height:         100%;
+  display:        flex;
+  flex-direction: column;
+  padding-bottom: $spacing-sm;
+}
+
+.chart-header {
+  display:         flex;
+  align-items:     flex-start;
+  justify-content: space-between;
+  margin-bottom:   $spacing-sm;
+
+  .title-group {
+    .chart-title {
+      font-size:   $font-size-base;
+      font-weight: $font-weight-semi;
+      color:       var(--text-secondary);
+    }
+
+    .chart-total {
+      font-size:      $font-size-xxl;
+      font-weight:    $font-weight-bold;
+      color:          var(--text-primary);
+      letter-spacing: -0.5px;
+      line-height:    1.1;
+      margin-top:     4px;
+    }
+  }
+
+  .chart-controls {
+    display:     flex;
+    align-items: center;
+    gap:         $spacing-md;
+  }
+}
+
+// ── Legend ────────────────────────────────────────────────────
+.legend-row {
+  display:     flex;
+  align-items: center;
+  gap:         6px;
+
+  .ldot {
+    width:         8px;
+    height:        8px;
+    border-radius: 50%;
+    &.earning  { background: $purple-primary; }
+    &.spending { background: $teal-accent; }
+  }
+
+  .llabel {
+    font-size:    $font-size-xs;
+    color:        var(--text-secondary);
+    margin-right: 6px;
+  }
+}
+
+// ── Period select ─────────────────────────────────────────────
+.period-select {
+  position: relative;
+  display:  flex;
+  align-items: center;
+
+  select {
+    appearance:   none;
+    background:   var(--bg-input);
+    border:       1px solid var(--border-color);
+    border-radius: $border-radius-md;
+    color:        var(--text-secondary);
+    font-size:    $font-size-xs;
+    font-family:  var(--font-base);
+    padding:      5px 26px 5px 10px;
+    cursor:       pointer;
+    outline:      none;
+    &:hover { border-color: $purple-primary; }
+  }
+
+  i {
+    position:       absolute;
+    right:          8px;
+    font-size:      0.55rem;
+    color:          var(--text-muted);
+    pointer-events: none;
+  }
+}

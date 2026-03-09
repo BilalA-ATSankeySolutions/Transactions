@@ -1,0 +1,115 @@
+// ============================================================
+// _constants.scss — Finity Design System Tokens
+// ============================================================
+
+// ── Brand / Primary ──────────────────────────────────────────
+$primary-color:       #1976d2;
+$primary-hover-color: #125aa1;
+$link-color:          #007ad9;
+$link-hover-color:    #005ea2;
+$secondary-color:     #2ecc71;
+$accent-color:        #e74c3c;
+$background-color:    #f5f5f5;
+$card-background:     #ffffff;
+
+// ── Dark Theme Surface Palette ───────────────────────────────
+$dark-bg-base:          #0d1117;
+$dark-bg-surface:       #131925;
+$dark-bg-card:          #171e2e;
+$dark-bg-card-elevated: #1c2438;
+$dark-bg-input:         #1e2740;
+$dark-bg-sidebar:       #0f1420;
+$dark-bg-nav:           #0d1117;
+
+$dark-border:           rgba(255, 255, 255, 0.07);
+$dark-border-subtle:    rgba(255, 255, 255, 0.04);
+
+$dark-text-primary:     #e2e8f4;
+$dark-text-secondary:   #7e8da8;
+$dark-text-muted:       #4e5d78;
+$dark-text-label:       #617090;
+
+// ── Accent Colors ────────────────────────────────────────────
+$purple-primary:  #7c5cfc;
+$purple-light:    #9b7dfd;
+$purple-dark:     #5a3fd4;
+$purple-glow:     rgba(124, 92, 252, 0.28);
+
+$teal-accent:     #00d4b4;
+$teal-glow:       rgba(0, 212, 180, 0.2);
+
+$pink-accent:     #ff6b9d;
+$pink-glow:       rgba(255, 107, 157, 0.2);
+
+$green-success:   #22c55e;
+$green-glow:      rgba(34, 197, 94, 0.15);
+
+$orange-warning:  #f59e0b;
+$red-danger:      #ef4444;
+
+// ── Chart Palette ────────────────────────────────────────────
+$chart-earning:   #7c5cfc;
+$chart-spending:  #00d4b4;
+
+// ── Spacing ──────────────────────────────────────────────────
+$spacing-xs:  4px;
+$spacing-sm:  8px;
+$spacing-md:  16px;
+$spacing-lg:  24px;
+$spacing-xl:  32px;
+$spacing-xxl: 48px;
+
+// ── Border Radius ────────────────────────────────────────────
+$border-radius-sm:   4px;
+$border-radius-md:   8px;
+$border-radius-lg:   14px;
+$border-radius-xl:   20px;
+$border-radius-full: 50%;
+
+// ── Shadows ──────────────────────────────────────────────────
+$shadow-card:       0 2px 8px rgba(0, 0, 0, 0.05);
+$shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
+$shadow-navbar:     0 2px 8px rgba(0, 0, 0, 0.2);
+$shadow-card-white: 0 4px 16px rgba(0, 0, 0, 0.08);
+$shadow-dark-card:  0 4px 24px rgba(0, 0, 0, 0.5);
+$shadow-purple:     0 4px 20px rgba(124, 92, 252, 0.35);
+
+// ── Typography ───────────────────────────────────────────────
+$font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-family-mono: 'JetBrains Mono', monospace;
+
+$font-size-xs:    0.625rem;   // 10px
+$font-size-sm:    0.75rem;    // 12px
+$font-size-base:  0.8125rem;  // 13px
+$font-size-md:    1rem;       // 16px
+$font-size-lg:    1.25rem;    // 20px
+$font-size-xl:    1.5rem;     // 24px
+$font-size-xxl:   1.875rem;   // 30px
+$font-size-title: 1.4rem;
+
+$font-weight-regular: 400;
+$font-weight-medium:  500;
+$font-weight-semi:    600;
+$font-weight-bold:    700;
+
+// ── Transitions ──────────────────────────────────────────────
+$transition-fast:   0.15s ease;
+$transition-normal: 0.25s ease;
+$transition-slow:   0.4s ease;
+
+// ── Z-index Scale ────────────────────────────────────────────
+$z-sidebar: 100;
+$z-navbar:  200;
+$z-modal:   300;
+$z-tooltip: 400;
+
+// ── Layout Dimensions ────────────────────────────────────────
+$sidebar-width:       78px;
+$topnav-height:       60px;
+$right-panel-width:   272px;
+
+$text-color: #333333;
+$text-light: #ffffff;
+$text-dark: #1a1a2e;
+$text-muted: #64748b;
+$text-heading: #1e293b;

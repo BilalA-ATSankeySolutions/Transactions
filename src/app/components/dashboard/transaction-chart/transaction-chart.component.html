@@ -1,0 +1,44 @@
+<!-- transaction-chart.component.html -->
+<div class="chart-card finity-card">
+
+  <div class="chart-header">
+    <div class="title-group">
+      <h3 class="chart-title">Transactions Overview</h3>
+      <div class="chart-total">{{ totalLabel }}</div>
+    </div>
+
+    <div class="chart-controls">
+      <div class="legend-row">
+        <span class="ldot earning"></span><span class="llabel">Earning</span>
+        <span class="ldot spending"></span><span class="llabel">Spending</span>
+      </div>
+
+      <div class="period-select">
+        <select [(ngModel)]="selectedPeriod" (change)="buildChart()">
+          @for (p of periods; track p) {
+            <option [value]="p">{{ p }}</option>
+          }
+        </select>
+        <i class="pi pi-chevron-down"></i>
+      </div>
+    </div>
+  </div>
+
+  @if (chartOptions) {
+    <apx-chart
+      [series]="chartOptions.series!"
+      [chart]="chartOptions.chart!"
+      [xaxis]="chartOptions.xaxis!"
+      [yaxis]="chartOptions.yaxis!"
+      [tooltip]="chartOptions.tooltip!"
+      [grid]="chartOptions.grid!"
+      [fill]="chartOptions.fill!"
+      [stroke]="chartOptions.stroke!"
+      [dataLabels]="chartOptions.dataLabels!"
+      [markers]="chartOptions.markers!"
+      [colors]="chartOptions.colors!"
+      [annotations]="chartOptions.annotations!"
+      [legend]="chartOptions.legend!" />
+  }
+
+</div>

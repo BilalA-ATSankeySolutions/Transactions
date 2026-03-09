@@ -1,0 +1,49 @@
+<!-- financial-goals.component.html -->
+<div class="goals-card finity-card">
+
+  <div class="goals-header">
+    <h3 class="goals-title">Financial goals</h3>
+    <button class="arrow-btn">
+      <i class="pi pi-chevron-right"></i>
+    </button>
+  </div>
+
+  <div class="goals-list">
+    @for (g of goals; track g.name) {
+      <div class="goal-row">
+
+        <!-- SVG ring -->
+        <div class="ring-wrap">
+          <svg width="40" height="40" viewBox="0 0 40 40">
+            <circle cx="20" cy="20" r="16" class="ring-bg" />
+            <circle cx="20" cy="20" r="16" class="ring-fill"
+                    [style.stroke]="g.color"
+                    [attr.stroke-dasharray]="ringDash(g.progress)"
+                    transform="rotate(-90 20 20)" />
+          </svg>
+          <span class="ring-label" [style.color]="g.color">{{ g.progress }}%</span>
+        </div>
+
+        <!-- Info -->
+        <div class="goal-info">
+          <span class="goal-name">{{ g.name }}</span>
+          <span class="goal-deadline">Deadline: {{ g.deadline }}</span>
+        </div>
+
+        <!-- Amounts -->
+        <div class="goal-amounts">
+          <div class="amt-col">
+            <span class="amt-label">Saved up</span>
+            <span class="amt-val">{{ g.savedUp | currency:'USD':'symbol':'1.0-0' }}</span>
+          </div>
+          <div class="amt-col">
+            <span class="amt-label">Goal</span>
+            <span class="amt-val">{{ g.goal | currency:'USD':'symbol':'1.0-0' }}</span>
+          </div>
+        </div>
+
+      </div>
+    }
+  </div>
+
+</div>

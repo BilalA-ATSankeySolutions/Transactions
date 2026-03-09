@@ -1,0 +1,36 @@
+@use '../../styles/constants' as *;
+
+.shell {
+  display:        flex;
+  flex-direction: column;  
+  height:         100%;
+  width:          100%;
+  background:     var(--bg-base);
+  overflow:       hidden;
+}
+
+.shell-body {
+  flex:       1;
+  min-height: 0;            
+  display:    flex;
+  overflow:   hidden;
+}
+
+.shell-sidebar {
+  width:           $sidebar-width;
+  min-width:       $sidebar-width;
+  flex-shrink:     0;
+  display:         flex;
+  align-items:     center;     
+  justify-content: center;
+  padding:         $spacing-md 0;
+}
+
+.shell-content {
+  flex:           1;
+  min-height:     0;
+  min-width:      0;
+  overflow-y:     auto;
+  display:        flex;
+  flex-direction: column;
+}
